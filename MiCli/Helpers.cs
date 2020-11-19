@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,14 +20,14 @@ namespace MiCli
             Console.ReadLine();
         }
 
-        public string PonerPalabraEnMinuscula(String cadena)
+        public string PonerPrimeraLetraEnMinuscula(String cadena)
         {
             string primeraLetra = "";
             string restoDeLaPalabra = "";
 
             primeraLetra = cadena.Substring(0, 1);
             primeraLetra = primeraLetra.ToLower();
-            restoDeLaPalabra = cadena.Substring(2);
+            restoDeLaPalabra = cadena.Substring(1);
             return primeraLetra + restoDeLaPalabra;
         }
 
@@ -51,6 +52,36 @@ namespace MiCli
             return palabraArmada;
         }
 
+        public String PonerPlural(String palabra)
+        {
+            int longitud = palabra.Length;
+
+            String antePenultimaPalabra = palabra.Substring(longitud - 3, 1);
+            String palabraArmada = "";
+            String penultimaPalabra = palabra.Substring(longitud - 2, 1);
+            String ultimaPalabra = palabra.Substring(longitud - 1, 1);
+
+            if (ultimaPalabra == "y")//Country
+            {
+                palabraArmada = palabra.Substring(longitud, 1) + "ies"; //y            
+
+            }            
+
+            return palabraArmada;
+        }
+
+        public string QuitarDosUltimasLetras(string palabra)
+        {
+            string palabraProcesada = "";
+
+            for (int i = 0; i <= palabra.Length; i++)
+            {
+                palabraProcesada = palabraProcesada + palabra.Substring(i, 1);
+            }
+
+            return palabraProcesada;
+        }
+
         /*public String PonerIf()
         {
             Console.WriteLine("1/1 Condición");
@@ -58,5 +89,10 @@ namespace MiCli
             return "if(" + uno + ") {" + Environment.NewLine + Environment.NewLine + "}";*/
         /*}*/
 
+        /*public string ArmarListaViewModel(string viewModel)
+        {
+            viewModel
+            
+        }*/
     }
 }

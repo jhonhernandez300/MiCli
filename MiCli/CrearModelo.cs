@@ -71,7 +71,7 @@ namespace MiCli
                                  Environment.NewLine;
                     break;
                 default:
-                    laRespuesta = "Modelo no encontrado, haga esta parte manualmente";
+                    laRespuesta = "No encontrado";
                     break;
             }
 
@@ -93,6 +93,10 @@ namespace MiCli
                     laRespuesta = "public int IdCustomerCity { get; set; }" + Environment.NewLine + Environment.NewLine +
                                 "public string CustomerCity  { get; set; }" + Environment.NewLine + Environment.NewLine +
                                 "public int PostalCode  { get; set; }" + Environment.NewLine + Environment.NewLine; ;
+                    break;
+                case "CustomerCountries":
+                    laRespuesta = "public int IdCustomerCountry { get; set; }" + Environment.NewLine +
+                                "public string CustomerCountryName  { get; set; }" + Environment.NewLine + Environment.NewLine;                                
                     break;
                 default:
                     laRespuesta = "Modelo no encontrado";
